@@ -12,6 +12,8 @@ Ryan Cole 2023-12-18
         board = mayfly
         framework = arduino
 
+Note: You may have to click on the platformio alien head to start the project if the platformio menu doesn't show up on the bottom.
+
 
 ## Test running code - blink examples
 1. create a /src folder in the project root to store code we want to build
@@ -26,6 +28,8 @@ Success! Now we have confirmed we can send code to the mayfly and it will run th
 1. put /examples/battery_measurement/battery_measurement.ino in /src (delete any other files)
 2. build it and send to the mayfly
 3. open the serial monitor. On my pc it was port /dev/ttyUSB0. I used vscode's built in serial monitor since I was not able to figure out how to change the baud rate of platformIO's serial monitor. If the serial monitor is reading gibberish, make sure the baud rate on the serial monitor matches the baud rate of the code
+
+You may have to download the serial monitor extension to get a better interface to the arduino
 
 Success! We can read data from the mayfly on our serial monitor!
 
