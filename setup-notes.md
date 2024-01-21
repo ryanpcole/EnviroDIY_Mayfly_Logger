@@ -11,6 +11,12 @@ Ryan Cole 2023-12-18
         platform = atmelavr
         board = mayfly
         framework = arduino
+        lib_ldf_mode = deep+
+        lib_ignore = RTCZero
+        build_flags = 
+            -DSDI12_EXTERNAL_PCINT
+        lib_deps = https://github.com/EnviroDIY/ModularSensors
+            
 
 Note: You may have to click on the platformio alien head to start the project if the platformio menu doesn't show up on the bottom.
 
@@ -41,4 +47,32 @@ Success! We can read data from the mayfly on our serial monitor!
 3. open serial monitor and check that the mayfly is outputting a reasonable temperature
 
 Congrats! We have installed a library using platformio that runs one of the components on the mayfly!
+
+
+## Adding library dependencies using platformio
+EnviroDIY recommends we install their entire group of libraries from github using PlatformIO.
+To do this run the following command:
+`pio pkg install -l https://github.com/EnviroDIY/ModularSensors`
+
+
+
+
+Do the following if you can't build a file due to a missing library.
+
+1. Read the error message or sketch to see what library dependency is missing. These are defined in the beginning of a sketch using the #include tab. If you are using vscode, then the missing dependency will probably be underlined with a red squiggle. If looking at the error message, look for something like this:
+
+    *************************************************************************
+    * Looking for Adafruit_Sensor.h dependency? Check our library registry!
+    *
+    * CLI  > platformio lib search "header:Adafruit_Sensor.h"
+    * Web  > https://registry.platformio.org/search?q=header:Adafruit_Sensor.h
+    *
+    *************************************************************************
+
+
+2. use the command 
+`pio pkg install -l missing_package_path` 
+replacing the missing_package_path with the correct package path. You can look up the available packages on the PlatformIO registry: https://registry.platformio.org/
+
+Note: This will also add a line to the platformio.ini file for lib_deps
 
