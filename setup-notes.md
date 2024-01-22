@@ -3,7 +3,7 @@ Ryan Cole 2023-12-18
 
 ## Setup
 1. Download vscode
-2. download the PlatformIO IDE extension for vscode
+2. download the PlatformIO IDE extension for vscode from the extensions menu (four blocks) on the left sidebar.
     PlatformIO is a library manager for arduino that makes getting all the necessary libraries together a lot easeir
 3. Clone github repo ryanpcole/EnviroDIY_Mayfly_Logger
 4. create platformio.ini file in the root of the repo with the following:
@@ -35,7 +35,7 @@ Success! Now we have confirmed we can send code to the mayfly and it will run th
 2. build it and send to the mayfly
 3. open the serial monitor. On my pc it was port /dev/ttyUSB0. I used vscode's built in serial monitor since I was not able to figure out how to change the baud rate of platformIO's serial monitor. If the serial monitor is reading gibberish, make sure the baud rate on the serial monitor matches the baud rate of the code
 
-You may have to download the serial monitor extension to get a better interface to the arduino
+You may have to download the serial monitor extension to get a better interface to the arduino. Its just called "Serial Monitor" in the extension store.
 
 Success! We can read data from the mayfly on our serial monitor!
 

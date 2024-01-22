@@ -21,11 +21,11 @@ use this power pin and one of the jumpers to send a 5v signal for the ISCO.
 #include <Wire.h>           // This library is included with the Arduino IDE, and allows communication with I2C/TWI devices
 #include "Sodaq_DS3231.h"   // Install this library to interact with the Real Time Clock
 
-float TEMP_THRESH = 28.0;   // Temperature threshold (degrees C) to turn on LED
+float TEMP_THRESH = 22.0;   // Temperature threshold (degrees C) to turn on LED
 int LEDtime = 1000;   //milliseconds
 float current_temp;     //variable to hold the measured temperature (what type does the function return?)
 int SWITCHPIN = 22;   // pin to switch power
-int LEDPIN = 4;       // LED pin
+int LEDPIN = SWITCHPIN;       // LED pin
 
 void setup ()
 {
@@ -54,6 +54,8 @@ void loop ()
     if (current_temp >= TEMP_THRESH) {
     // turn LED on:
     digitalWrite(LEDPIN, HIGH);
+    delay(LEDtime);
+    digitalWrite(LEDPIN, LOW);
     }
     else {
     // turn LED off:
