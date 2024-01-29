@@ -5,18 +5,8 @@ Ryan Cole 2023-12-18
 1. Download vscode
 2. download the PlatformIO IDE extension for vscode from the extensions menu (four blocks) on the left sidebar.
     PlatformIO is a library manager for arduino that makes getting all the necessary libraries together a lot easeir
-3. Clone github repo ryanpcole/EnviroDIY_Mayfly_Logger
-4. create platformio.ini file in the root of the repo with the following:
-        [env:mayfly]
-        platform = atmelavr
-        board = mayfly
-        framework = arduino
-        lib_ldf_mode = deep+
-        lib_ignore = RTCZero
-        build_flags = 
-            -DSDI12_EXTERNAL_PCINT
-        lib_deps = https://github.com/EnviroDIY/ModularSensors
-            
+3. Clone github repo ryanpcole/EnviroDIY_Mayfly_Logger and checkout the initial-testing branch
+4. create platformio.ini file in the root of the repo by copying the platformio-template.txt and saving it as platformio.ini
 
 Note: You may have to click on the platformio alien head to start the project if the platformio menu doesn't show up on the bottom.
 

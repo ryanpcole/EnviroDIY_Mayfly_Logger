@@ -1,0 +1,21 @@
+; PlatformIO Project Configuration File
+;
+;   Build options: build flags, source filter
+;   Upload options: custom upload port, speed and extra flags
+;   Library options: dependencies, extra library storages
+;   Advanced options: extra scripting
+;
+; Please visit documentation for the other options and examples
+; https://docs.platformio.org/page/projectconf.html
+
+[env:mayfly]
+platform = atmelavr
+board = mayfly
+framework = arduino
+lib_ldf_mode = deep+
+lib_ignore = RTCZero
+build_flags = 
+	-DSDI12_EXTERNAL_PCINT
+lib_deps = 
+	https://github.com/EnviroDIY/ModularSensors
+	arduino-libraries/SD@^1.2.4
